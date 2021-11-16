@@ -19,5 +19,4 @@ class ProfileResource < ApplicationResource
   many_to_many :movie
 
   many_to_many :movies
-
 end

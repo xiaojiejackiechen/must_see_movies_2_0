@@ -4,7 +4,7 @@ class Review < ApplicationRecord
   belongs_to :movie
 
   belongs_to :reviewer,
-             :class_name => "Profile"
+             class_name: "Profile"
 
   # Indirect associations
 
@@ -15,5 +15,4 @@ class Review < ApplicationRecord
   def to_s
     rating
   end
-
 end

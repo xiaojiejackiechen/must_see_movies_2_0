@@ -28,5 +28,4 @@ class MovieResource < ApplicationResource
                resource: ProfileResource
 
   many_to_many :actors
-
 end

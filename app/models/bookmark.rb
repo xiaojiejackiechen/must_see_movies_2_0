@@ -4,7 +4,7 @@ class Bookmark < ApplicationRecord
   belongs_to :movie
 
   belongs_to :user,
-             :class_name => "Profile"
+             class_name: "Profile"
 
   # Indirect associations
 
@@ -15,5 +15,4 @@ class Bookmark < ApplicationRecord
   def to_s
     user.to_s
   end
-
 end
