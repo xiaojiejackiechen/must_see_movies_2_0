@@ -1,5 +1,7 @@
 class Profile < ApplicationRecord
-  # Direct associations
+  
+  include JwtToken
+# Direct associations
 
   has_many   :bookmarks,
              :foreign_key => "user_id",
