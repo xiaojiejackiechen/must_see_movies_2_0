@@ -16,6 +16,8 @@ class ProfileResource < ApplicationResource
 
   # Indirect associations
 
+  many_to_many :movie
+
   many_to_many :movies
 
 end
