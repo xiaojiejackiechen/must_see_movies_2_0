@@ -12,6 +12,8 @@ RSpec.describe Profile, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_many(:movie) }
+
     it { should have_many(:movies) }
 
     end

@@ -11,6 +11,10 @@ class Profile < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :movie,
+             :through => :reviews,
+             :source => :movie
+
   has_many   :movies,
              :through => :reviews,
              :source => :movie
