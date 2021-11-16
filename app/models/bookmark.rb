@@ -1,6 +1,8 @@
 class Bookmark < ApplicationRecord
   # Direct associations
 
+  belongs_to :movie
+
   belongs_to :user,
              :class_name => "Profile"
 
