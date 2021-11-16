@@ -1,7 +1,6 @@
 <% was_validated = bookmark.errors.any? %>
 
 <%= form_with(model: bookmark, local: true, novalidate: true, class: "mb-3") do |f| %>
-  <!-- Label and input for user_id start -->
   <div class="form-group">
     <% user_class = "form-control" %>
     <% user_was_invalid = bookmark.errors.include?(:user) %>
@@ -15,9 +14,7 @@
     <% end %>
 
     <%= f.label :user_id %>
-    <!-- Input for user_id start -->
     <%= f.collection_select :user_id, Profile.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for user_id end -->
     <% if user_was_invalid %>
       <% bookmark.errors.full_messages_for(:user).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -26,8 +23,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for user_id end -->
-  <!-- Label and input for movie_id start -->
   <div class="form-group">
     <% movie_class = "form-control" %>
     <% movie_was_invalid = bookmark.errors.include?(:movie) %>
@@ -41,9 +36,7 @@
     <% end %>
 
     <%= f.label :movie_id %>
-    <!-- Input for movie_id start -->
     <%= f.collection_select :movie_id, Movie.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for movie_id end -->
     <% if movie_was_invalid %>
       <% bookmark.errors.full_messages_for(:movie).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -52,6 +45,5 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for movie_id end -->
   <%= f.button class: "btn btn-outline-secondary btn-block" %>
 <% end %>

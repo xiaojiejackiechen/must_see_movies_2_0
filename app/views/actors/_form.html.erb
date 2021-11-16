@@ -1,7 +1,6 @@
 <% was_validated = actor.errors.any? %>
 
 <%= form_with(model: actor, local: true, novalidate: true, class: "mb-3") do |f| %>
-  <!-- Label and input for actor_name start -->
   <div class="form-group">
     <% actor_name_class = "form-control" %>
     <% actor_name_was_invalid = actor.errors.include?(:actor_name) %>
@@ -15,9 +14,7 @@
     <% end %>
 
     <%= f.label :actor_name %>
-    <!-- Input for actor_name start -->
     <%= f.text_field :actor_name, class: actor_name_class, placeholder: "Enter actor name" %>
-    <!-- Input for actor_name end -->
     <% if actor_name_was_invalid %>
       <% actor.errors.full_messages_for(:actor_name).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -26,8 +23,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for actor_name end -->
-  <!-- Label and input for actor_number start -->
   <div class="form-group">
     <% actor_number_class = "form-control" %>
     <% actor_number_was_invalid = actor.errors.include?(:actor_number) %>
@@ -41,9 +36,7 @@
     <% end %>
 
     <%= f.label :actor_number %>
-    <!-- Input for actor_number start -->
     <%= f.number_field :actor_number, class: actor_number_class, placeholder: "Enter actor number" %>
-    <!-- Input for actor_number end -->
     <% if actor_number_was_invalid %>
       <% actor.errors.full_messages_for(:actor_number).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -52,8 +45,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for actor_number end -->
-  <!-- Label and input for dob start -->
   <div class="form-group">
     <% dob_class = "form-control" %>
     <% dob_was_invalid = actor.errors.include?(:dob) %>
@@ -67,9 +58,7 @@
     <% end %>
 
     <%= f.label :dob %>
-    <!-- Input for dob start -->
     <%= f.datetime_select :dob, class: dob_class, placeholder: "Enter dob" %>
-    <!-- Input for dob end -->
     <% if dob_was_invalid %>
       <% actor.errors.full_messages_for(:dob).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -78,8 +67,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for dob end -->
-  <!-- Label and input for bio start -->
   <div class="form-group">
     <% bio_class = "form-control" %>
     <% bio_was_invalid = actor.errors.include?(:bio) %>
@@ -93,9 +80,7 @@
     <% end %>
 
     <%= f.label :bio %>
-    <!-- Input for bio start -->
     <%= f.text_field :bio, class: bio_class, placeholder: "Enter bio" %>
-    <!-- Input for bio end -->
     <% if bio_was_invalid %>
       <% actor.errors.full_messages_for(:bio).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -104,8 +89,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for bio end -->
-  <!-- Label and input for image start -->
   <div class="form-group">
     <% image_class = "form-control" %>
     <% image_was_invalid = actor.errors.include?(:image) %>
@@ -119,9 +102,7 @@
     <% end %>
 
     <%= f.label :image %>
-    <!-- Input for image start -->
     <%= f.file_field :image, class: "form-control" %>
-    <!-- Input for image end -->
     <% if image_was_invalid %>
       <% actor.errors.full_messages_for(:image).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -130,6 +111,5 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for image end -->
   <%= f.button class: "btn btn-outline-secondary btn-block" %>
 <% end %>

@@ -1,7 +1,6 @@
 <% was_validated = movie.errors.any? %>
 
 <%= form_with(model: movie, local: true, novalidate: true, class: "mb-3") do |f| %>
-  <!-- Label and input for flyer start -->
   <div class="form-group">
     <% flyer_class = "form-control" %>
     <% flyer_was_invalid = movie.errors.include?(:flyer) %>
@@ -15,9 +14,7 @@
     <% end %>
 
     <%= f.label :flyer %>
-    <!-- Input for flyer start -->
     <%= f.file_field :flyer, class: "form-control" %>
-    <!-- Input for flyer end -->
     <% if flyer_was_invalid %>
       <% movie.errors.full_messages_for(:flyer).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -26,8 +23,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for flyer end -->
-  <!-- Label and input for title start -->
   <div class="form-group">
     <% title_class = "form-control" %>
     <% title_was_invalid = movie.errors.include?(:title) %>
@@ -41,9 +36,7 @@
     <% end %>
 
     <%= f.label :title %>
-    <!-- Input for title start -->
     <%= f.text_field :title, class: title_class, placeholder: "Enter title" %>
-    <!-- Input for title end -->
     <% if title_was_invalid %>
       <% movie.errors.full_messages_for(:title).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -52,8 +45,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for title end -->
-  <!-- Label and input for production_year start -->
   <div class="form-group">
     <% production_year_class = "form-control" %>
     <% production_year_was_invalid = movie.errors.include?(:production_year) %>
@@ -67,9 +58,7 @@
     <% end %>
 
     <%= f.label :production_year %>
-    <!-- Input for production_year start -->
     <%= f.datetime_select :production_year, class: production_year_class, placeholder: "Enter production year" %>
-    <!-- Input for production_year end -->
     <% if production_year_was_invalid %>
       <% movie.errors.full_messages_for(:production_year).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -78,8 +67,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for production_year end -->
-  <!-- Label and input for description start -->
   <div class="form-group">
     <% description_class = "form-control" %>
     <% description_was_invalid = movie.errors.include?(:description) %>
@@ -93,9 +80,7 @@
     <% end %>
 
     <%= f.label :description %>
-    <!-- Input for description start -->
     <%= f.text_field :description, class: description_class, placeholder: "Enter description" %>
-    <!-- Input for description end -->
     <% if description_was_invalid %>
       <% movie.errors.full_messages_for(:description).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -104,8 +89,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for description end -->
-  <!-- Label and input for director_id start -->
   <div class="form-group">
     <% director_class = "form-control" %>
     <% director_was_invalid = movie.errors.include?(:director) %>
@@ -119,9 +102,7 @@
     <% end %>
 
     <%= f.label :director_id %>
-    <!-- Input for director_id start -->
     <%= f.collection_select :director_id, Director.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for director_id end -->
     <% if director_was_invalid %>
       <% movie.errors.full_messages_for(:director).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -130,6 +111,5 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for director_id end -->
   <%= f.button class: "btn btn-outline-secondary btn-block" %>
 <% end %>

@@ -6,35 +6,25 @@
   <div class="card-body">
     <dl class="mb-1">
       <dt>Flyer</dt>
-      <!-- Display flyer start -->
       <dd>
         <%= cl_image_tag @movie.flyer, class: "img-fluid" %>
       </dd>
-      <!-- Display flyer end -->
 
       <dt>Title</dt>
-      <!-- Display title start -->
       <dd><%= movie.title %></dd>
-      <!-- Display title end -->
 
       <dt>Production year</dt>
-      <!-- Display production_year start -->
       <dd><%= movie.production_year %></dd>
-      <!-- Display production_year end -->
 
       <dt>Description</dt>
-      <!-- Display description start -->
       <dd><%= movie.description %></dd>
-      <!-- Display description end -->
 
       <dt>Director</dt>
-      <!-- Display director_id start -->
       <dd>
         <% if @movie.director.present? %>
           <%= link_to movie.director, movie.director %>
         <% end %>
       </dd>
-      <!-- Display director_id end -->
 
     </dl>
 
@@ -43,21 +33,17 @@
         <%= link_to_show_or_back movie, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
       </div>
 
-      <!-- Edit link movie start -->
       <div class="col">
         <%= link_to edit_movie_url(movie), class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-edit"></i>
         <% end %>
       </div>
-      <!-- Edit link movie end -->
 
-      <!-- Delete link movie start -->
       <div class="col">
         <%= link_to movie, method: :delete, data: { confirm: "Do you really want to delete this movie?" }, class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
       </div>
-      <!-- Delete link movie end -->
     </div>
   </div>
 
