@@ -1,6 +1,10 @@
 class Movie < ApplicationRecord
   # Direct associations
 
+  has_many   :casts,
+             :class_name => "Character",
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations
