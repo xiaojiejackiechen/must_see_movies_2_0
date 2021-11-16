@@ -7,7 +7,9 @@
     <dl class="mb-1">
       <dt>Flyer</dt>
       <!-- Display flyer start -->
-      <dd><%= movie.flyer %></dd>
+      <dd>
+        <%= cl_image_tag @movie.flyer, class: "img-fluid" %>
+      </dd>
       <!-- Display flyer end -->
 
       <dt>Title</dt>

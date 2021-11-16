@@ -1,4 +1,6 @@
 class Movie < ApplicationRecord
+  mount_uploader :flyer, FlyerUploader
+
   # Direct associations
 
   belongs_to :director
