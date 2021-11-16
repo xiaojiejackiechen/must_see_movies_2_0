@@ -1,6 +1,10 @@
 class Profile < ApplicationRecord
   # Direct associations
 
+  has_many   :reviews,
+             :foreign_key => "reviewer_id",
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations
