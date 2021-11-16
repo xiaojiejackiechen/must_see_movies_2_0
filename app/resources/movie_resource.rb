@@ -10,6 +10,8 @@ class MovieResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :bookmarks
+
   has_many   :reviews
 
   has_many   :casts,
