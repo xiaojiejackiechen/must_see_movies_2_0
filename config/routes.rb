@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :actors
   resources :characters
   resources :movies
   devise_for :profiles
