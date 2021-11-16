@@ -1,6 +1,10 @@
 class Profile < ApplicationRecord
   # Direct associations
 
+  has_many   :bookmarks,
+             :foreign_key => "user_id",
+             :dependent => :destroy
+
   has_many   :reviews,
              :foreign_key => "reviewer_id",
              :dependent => :destroy

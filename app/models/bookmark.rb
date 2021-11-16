@@ -1,6 +1,9 @@
 class Bookmark < ApplicationRecord
   # Direct associations
 
+  belongs_to :user,
+             :class_name => "Profile"
+
   # Indirect associations
 
   # Validations
